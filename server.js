@@ -15,13 +15,18 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(
-  "mongodb:/aelam757@gmail.com:Sk8roswell!@ds023912.mlab.com:23912/heroku_lwhmskdt",
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-  }
-);
+// mongoose.connect(
+//   "mongodb:/aelam757@gmail.com:Sk8roswell!@ds023912.mlab.com:23912/heroku_lwhmskdt",
+//   {
+//     useNewUrlParser: true,
+//     useFindAndModify: false,
+//   }
+// );
+mongoose.connect("mongodb:/aelam757@gmail.com:Sk8roswell!@ds119020.mlab.com:19020/heroku_w3nzs78w", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
 
 // routes
 app.use(require("./routes/api.js"));
