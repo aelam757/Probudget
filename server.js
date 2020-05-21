@@ -3,7 +3,7 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use(express.static("public"));
 //     useFindAndModify: false,
 //   }
 // );
-mongoose.connect("mongodb://aelam757@gmail.com:Sk8roswell!@ds023912.mlab.com:23912/heroku_lwhmskdt", {
+mongoose.connect(process.env.MONGODB_URI||"mongodb://aelam757@gmail.com:Sk8roswell!@ds023912.mlab.com:23912/heroku_lwhmskdt", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
